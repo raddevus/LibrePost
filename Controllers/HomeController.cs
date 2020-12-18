@@ -31,7 +31,7 @@ namespace LibrePost.Controllers
         }
 
         public IActionResult CreateAccount(String userName){
-            if (userName != String.Empty){
+            if ((userName != null) && (userName != String.Empty)){
                 userName = userName.Trim();
                 userName = userName.Replace(" ", "");
                 var cwd = Directory.GetCurrentDirectory();
