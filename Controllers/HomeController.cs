@@ -36,7 +36,9 @@ namespace LibrePost.Controllers
                 userName = userName.Replace(" ", "");
                 var cwd = Directory.GetCurrentDirectory();
                 _logger.Log(LogLevel.Information,cwd);
-                Directory.CreateDirectory(Path.Combine(cwd,"wwwroot",userName));
+                var userDir = Path.Combine(cwd,"wwwroot",userName);
+                Directory.CreateDirectory(userDir);
+                _logger.LogInformation(Directory.Exists(userDir).ToString());
             }
             else{
                 var cwd = Directory.GetCurrentDirectory();
