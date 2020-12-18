@@ -1,8 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<script src="js/app.js"></script>
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div class="input-group mb-3">
+    <input id="userName" type="text" class="form-control" 
+        placeholder="username" aria-label="userName" 
+        aria-describedby="createUserNameBtn">
+    <div class="input-group-append">
+    <button id="createUserNameBtn" class="btn btn-outline-secondary" type="button"
+    asp-controller="Home" asp-action="CreateAccount">Create</button>
+    </div>
+    <partial name="CreateAccount"/>
 </div>
