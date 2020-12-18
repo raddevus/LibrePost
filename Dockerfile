@@ -8,8 +8,8 @@ COPY *.csproj .
 RUN dotnet restore
 
 # copy everything else and build app
-COPY ./LibrePost/. ./LibrePost/
-WORKDIR /source/LibrePost
+COPY LibrePost/. ./LibrePost/
+WORKDIR /source/.
 RUN dotnet publish -c release -o /app --no-restore
 
 # final stage/image
